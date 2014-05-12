@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+import sys, time, os
+
+def newBoard():
+    emptyBoard = []
+    for i in range(22):
+        emptyBoard.append('. . . . . . . . . .')
+    return emptyBoard
+
+
+board = newBoard()
+score = 0
+while True:
+    command = raw_input()
+    if command == 'q':
+        sys.exit()
+    elif command == 'p':
+        for i in range(22):
+            #   print('. . . . . . . . . .')
+            print board[i]
+    elif command == 'g':
+        for i in range(22):
+            lineIn = raw_input()
+            board[i] = lineIn
+    elif command == 'c':
+        board = newBoard()
+    elif command == '?s':
+        print score
+            
